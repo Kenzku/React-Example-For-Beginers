@@ -31,6 +31,13 @@ module.exports = {
     ],
     /*end webpack-dev-server*/
     module: {
+        preLoaders: [
+            {
+                test: /\.(js|jsx)$/,
+                include: APP_DIR,
+                loader: 'eslint-loader'
+            }
+        ],
         loaders: [{ // test determin if the files shall be include
             test: /\.jsx?/,
             include: APP_DIR, // path to test the files
